@@ -6,8 +6,8 @@ Centralised configuration loader for the DSA Companion CLI.
 Design decisions
 ----------------
 * All internal path constants are module-private (prefixed with ``_``).
-* The DSA repository root is resolved **once** at import time and cached
-  in ``_dsa_root``.  Repeated calls to :func:`load` or :func:`get_dsa_root`
+* The DSA repository root is resolved **once** at first use and cached
+  in ``_dsa_root``. Repeated calls to :func:`load` or :func:`get_dsa_root`
   are therefore free after the first.
 * :func:`load` is the single canonical entry point for command modules.
   It returns a ``(config_dict, dsa_root)`` pair so callers have everything
@@ -15,12 +15,8 @@ Design decisions
 
 Layout assumption
 -----------------
-::
-
-    DSA/            ← repository root  (one level above this tool)
-    └── dsa-tool/   ← tool root / BASE_DIR
-        └── utils/
-            └── config.py  (this file)
+The tool is a standalone project. The DSA repository root is specified
+in the ``dsa_repo_path`` field of ``config.json``.
 """
 
 from __future__ import annotations
@@ -51,21 +47,34 @@ _dsa_root: Path | None = None
 def _resolve_dsa_root() -> Path:
     """Compute and validate the DSA repository root directory.
 
-    The root is the parent of ``BASE_DIR`` (i.e. the directory that
-    *contains* ``dsa-tool/``).
+    The root is loaded from the ``dsa_repo_path`` field in ``config.json``.
 
     Returns:
         Absolute path to the DSA repository root.
 
     Raises:
-        FileNotFoundError: If the expected parent directory does not exist,
-            which would indicate the tool has been moved outside the repo.
+        KeyError: If the ``dsa_repo_path`` field is missing from the configuration.
+        FileNotFoundError: If the configured path does not exist or is not a directory,
+            which would indicate an invalid configuration.
     """
-    root = BASE_DIR.parent
+    if not _CONFIG_PATH.exists():
+        _bootstrap_config()
+
+    with _CONFIG_PATH.open("r", encoding="utf-8") as fh:
+        config: dict = json.load(fh)
+
+    dsa_repo_path = config.get("dsa_repo_path")
+    if not dsa_repo_path:
+        raise KeyError(
+            "Missing 'dsa_repo_path' in config.json.\n"
+            "Please add it and point it to your DSA repository."
+        )
+
+    root = Path(dsa_repo_path).expanduser().resolve()
     if not root.is_dir():
         raise FileNotFoundError(
             f"DSA repository root not found at: {root}\n"
-            "Ensure that dsa-tool/ lives directly inside your DSA repository."
+            "Please update 'dsa_repo_path' in config.json to point to a valid directory."
         )
     return root
 

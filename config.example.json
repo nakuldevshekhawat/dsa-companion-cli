@@ -1,4 +1,5 @@
 {
+    "dsa_repo_path": "/absolute/path/to/your/dsa-learning-repository",
     "default_author": "Your Name",
     "default_language": "C++",
     "default_platform": "LeetCode",
