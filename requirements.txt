@@ -1,0 +1,4 @@
+# DSA Tool Requirements
+# No third-party libraries required — uses Python standard library only.
+# Python >= 3.8 recommended.
+colorama==0.4.6

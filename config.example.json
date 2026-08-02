@@ -1,0 +1,42 @@
+{
+    "default_author": "Your Name",
+    "default_language": "C++",
+    "default_platform": "LeetCode",
+    "platforms": [
+        "LeetCode",
+        "Codeforces",
+        "GeeksForGeeks",
+        "HackerRank",
+        "AtCoder",
+        "Other"
+    ],
+    "difficulties": [
+        "Easy",
+        "Medium",
+        "Hard"
+    ],
+    "topics": [
+        "Arrays",
+        "Strings",
+        "LinkedList",
+        "Stack",
+        "Queue",
+        "Trees",
+        "Graphs",
+        "DynamicProgramming",
+        "Recursion",
+        "Backtracking",
+        "Greedy",
+        "Sorting",
+        "Searching",
+        "Hashing",
+        "Heaps",
+        "Tries",
+        "BitManipulation",
+        "Math",
+        "SlidingWindow",
+        "TwoPointers",
+        "Other"
+    ],
+    "import_source": "https://raw.githubusercontent.com/Bugaddr/a2z_old_sheet/main/a2z.json"
+}

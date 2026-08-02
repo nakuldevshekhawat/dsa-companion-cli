@@ -1,0 +1,99 @@
+{
+    "Learn the basics": {
+        "Things to Know in C++/Java/Python or any language": 9,
+        "Build-up Logical Thinking": 1,
+        "Learn STL/Java-Collections or similar thing in your\n            language": 2,
+        "Know Basic Maths": 7,
+        "Learn Basic Recursion": 9,
+        "Learn Basic Hashing": 3
+    },
+    "Learn Important Sorting Techniques": {
+        "Sorting-I": 3,
+        "Sorting-II": 4
+    },
+    "Solve Problems on Arrays [Easy -> Medium -> Hard]": {
+        "Easy": 14,
+        "Medium": 14,
+        "Hard": 12
+    },
+    "Binary Search [1D, 2D Arrays, Search Space]": {
+        "BS on 1D Arrays": 13,
+        "BS on Answers": 14,
+        "BS on 2D Arrays": 5
+    },
+    "Strings [Basic and Medium]": {
+        "Basic and Easy String Problems": 7,
+        "Medium String Problems": 8
+    },
+    "Learn LinkedList [Single LL, Double LL, Medium, Hard Problems]": {
+        "Learn 1D LinkedList": 5,
+        "Learn Doubly LinkedList": 4,
+        "Medium Problems of LL": 15,
+        "Medium Problems of DLL": 3,
+        "Hard Problems of LL": 4
+    },
+    "Recursion [PatternWise]": {
+        "Get a Strong Hold": 5,
+        "Subsequences Pattern": 12,
+        "Trying out all Combos / Hard": 8
+    },
+    "Bit Manipulation [Concepts & Problems]": {
+        "Learn Bit Manipulation": 8,
+        "Interview Problems": 5,
+        "Advanced Maths": 5
+    },
+    "Stack and Queues [Learning, Pre-In-Post-fix, Monotonic Stack, Implementation]": {
+        "Learning": 8,
+        "Prefix, Infix, PostFix Conversion Problems": 6,
+        "Monotonic Stack/Queue Problems [VVV. Imp]": 11,
+        "Implementation Problems": 5
+    },
+    "Sliding Window & Two Pointer Combined Problems": {
+        "Medium Problems": 8,
+        "Hard Problems": 4
+    },
+    "Heaps [Learning, Medium, Hard Problems]": {
+        "Learning": 4,
+        "Medium Problems": 7,
+        "Hard Problems": 6
+    },
+    "Greedy Algorithms [Easy, Medium/Hard]": {
+        "Easy Problems": 5,
+        "Medium/Hard": 11
+    },
+    "Binary Trees [Traversals, Medium and Hard Problems]": {
+        "Traversals": 13,
+        "Medium Problems": 12,
+        "Hard Problems": 14
+    },
+    "Binary Search Trees [Concept and Problems]": {
+        "Concepts": 3,
+        "Practice Problems": 13
+    },
+    "Graphs [Concepts & Problems]": {
+        "Learning": 6,
+        "Problems on BFS/DFS": 14,
+        "Topo Sort and Problems": 7,
+        "Shortest Path Algorithms and Problems": 13,
+        "MinimumSpanningTree/Disjoint Set and Problems": 11,
+        "Other Algorithms": 3
+    },
+    "Dynamic Programming [Patterns and Problems]": {
+        "Introduction to DP": 1,
+        "1D DP": 5,
+        "2D/3D DP and DP on Grids": 7,
+        "DP on Subsequences": 11,
+        "DP on Strings": 10,
+        "DP on Stocks": 6,
+        "DP on LIS": 7,
+        "MCM DP | Partition DP": 7,
+        "DP on Squares": 2
+    },
+    "Tries": {
+        "Theory": 1,
+        "Problems": 6
+    },
+    "Strings": {
+        "Hard Problems": 9
+    }
+}

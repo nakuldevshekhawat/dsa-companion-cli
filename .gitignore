@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.log
+
+# macOS
+.DS_Store
+
+# Virtual environments
+.venv/
+venv/
+
+# VS Code
+.vscode/settings.json
+
+# User configuration
+config.json
+
+# User progress
+data/progress.json
+data/notes.json
+
+# Cached upstream data
+data/source_a2z.json
+# Environment
+.env
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# IDEs
+.idea/
