@@ -1,15 +1,8 @@
 <div align="center">
+  <img src="assets/logo.png" alt="DSA Companion CLI Logo" width="200" />
 
-# 🛠️ DSA Companion CLI
-
-> A polished, standalone Python CLI application designed to power up your Data Structures and Algorithms practice. Generate workspaces, track progress, and manage your problems directly from the terminal.
-
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Version](https://img.shields.io/badge/version-0.1.0-success.svg)](VERSION)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status](https://img.shields.io/badge/Status-Active_Development-orange.svg)]()
-[![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey.svg)]()
-
+  <h1>DSA Companion CLI</h1>
+  <p>A data-driven command-line application for managing Data Structures & Algorithms practice.</p>
 </div>
 
 ---
