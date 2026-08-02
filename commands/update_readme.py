@@ -273,17 +273,30 @@ def _build_readme_content(
     return "\n".join(valid_sections)
 
 
-def _write_readme(dsa_root: Path, content: str) -> None:
-    """Write *content* to ``<dsa_root>/README.md``, backing up the old file."""
+def _write_readme(dsa_root: Path, content: str, backup: bool = False) -> None:
+    """Write *content* to ``<dsa_root>/README.md``.
+    
+    If `backup` is True, backs up the old file to ``README.md.bak``.
+    """
     readme_dest = dsa_root / "README.md"
+    temp_dest = dsa_root / "README.md.tmp"
 
-    if readme_dest.exists():
-        backup = dsa_root / "README.md.bak"
-        backup.write_text(readme_dest.read_text(encoding="utf-8"), encoding="utf-8")
-        print(f"  💾  Previous README backed up → {backup.name}")
+    try:
+        if backup and readme_dest.exists():
+            backup_path = dsa_root / "README.md.bak"
+            backup_path.write_text(readme_dest.read_text(encoding="utf-8"), encoding="utf-8")
+            print(f"  💾  Previous README backed up → {backup_path.name}")
 
-    readme_dest.write_text(content, encoding="utf-8")
-    print(f"  🎉  README.md updated:\n     {readme_dest}\n")
+        temp_dest.write_text(content, encoding="utf-8")
+        temp_dest.replace(readme_dest)
+        print(f"  🎉  README.md updated:\n     {readme_dest}\n")
+    except Exception as e:
+        print(f"  ❌  Failed to update README.md: {e}")
+        if temp_dest.exists():
+            try:
+                temp_dest.unlink()
+            except OSError:
+                pass
 
 
 # ─────────────────────────────────────────────────────────────────────────────
